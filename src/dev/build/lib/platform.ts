@@ -29,7 +29,7 @@
  */
 
 export type PlatformName = 'win32' | 'darwin' | 'linux';
-export type PlatformArchitecture = 'x64' | 'arm64';
+export type PlatformArchitecture = 'x64' | 'arm64' | 'ppc64' | 'ppc64le';
 
 export interface TargetPlatforms {
   darwin: boolean;
@@ -75,6 +75,8 @@ export class Platform {
 }
 
 export const ALL_PLATFORMS = [
+  new Platform('linux', 'ppc64', 'linux-ppc64'),
+  new Platform('linux', 'ppc64le', 'linux-ppc64le'),
   new Platform('linux', 'x64', 'linux-x64'),
   new Platform('linux', 'arm64', 'linux-arm64'),
   new Platform('darwin', 'x64', 'darwin-x64'),
